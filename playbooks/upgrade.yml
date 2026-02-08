@@ -1,12 +1,13 @@
 - name: CI CD test playbook
   hosts: local
   become: true
+
   tasks:
     - name: Update apt cache
       apt:
         update_cache: yes
 
-    - name: Install htop
+    - name: Install tree package (NOT present before)
       apt:
-        name: htop
+        name: tree
         state: present
